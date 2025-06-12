@@ -5,6 +5,11 @@ cuml-cu12==25.6.*
 
 # Dask for parallelism
 dask-ml
+dask[distributed]
+dask-cuda
+
 xgboost
-numpy == 2.2
+numpy==2.2
 pandas
+scikit-learn
+
