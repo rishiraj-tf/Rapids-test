@@ -1,7 +1,7 @@
 ## Hyperparameter optimization for XGboost
 
 
-## pip install -r requirements.txt
+## rapip install -r requirements.txt
 
 import os
 from urllib.request import urlretrieve
@@ -12,7 +12,7 @@ import numpy as np
 import pandas as pd
 import xgboost as xgb
 from cuml.ensemble import RandomForestClassifier
-from cuml.metrics.accuracy import accuracy_score
+from cuml.metrics import accuracy_score
 from cuml.model_selection import train_test_split
 from dask.distributed import Client
 from dask_cuda import LocalCUDACluster
