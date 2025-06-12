@@ -1,7 +1,7 @@
 ## Hyperparameter optimization for XGboost
 
 
-pip install -r requirements.txt
+## pip install -r requirements.txt
 
 import os
 from urllib.request import urlretrieve
