@@ -1,0 +1,11 @@
+name: ratelimiting-config
+type: gateway-rate-limiting-config
+# The rules are evaluated in order, and only the first matching rule is applied, subsequent rules are ignored.
+rules:
+  - id: "openai-deepti/gpt4-ratelimit"
+    # This rule applies to requests made by the user rishiraj
+    when: 
+      subjects: [user:rishiraj@truefoundry.com]
+      models: [openai-deepti/gpt-4]
+    limit_to: 2
+    unit: requests_per_day

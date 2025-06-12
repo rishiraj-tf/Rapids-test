@@ -1,0 +1,17 @@
+name: model-fallback-config
+type: gateway-fallback-config
+# The rules are evaluated in order and once a request matches one rule, 
+# the subsequent rules are not checked
+rules:
+  # Fallback to gpt-4 of azure, aws if openai-main/gpt-4 fails with 500 or 503. The openai-main target also overrides a few request parameters like temperature and max_tokens
+  - id: "openai-gpt4-fallback"
+    when:
+      models: [openai-deepti/gpt-4]
+      response_status_codes: [500, 503]
+    fallback_models:
+      - target: openai-deepti/gpt-4o
+        override_params:
+          temperature: 0.9
+          max_tokens: 800
+
+          
