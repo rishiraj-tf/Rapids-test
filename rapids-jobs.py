@@ -1,7 +1,5 @@
 ## Hyperparameter optimization for XGboost
-pip install \
-    --extra-index-url=https://pypi.nvidia.com \
-    "cudf-cu12==25.6.*" "cuml-cu12==25.6.*"
+
 
 pip install -r requirements.txt
 
