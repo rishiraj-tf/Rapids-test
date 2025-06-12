@@ -9,7 +9,7 @@ dask[distributed]
 dask-cuda
 
 xgboost
-numpy==2.2
+numpy
 pandas
 scikit-learn
 
