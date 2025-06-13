@@ -22,3 +22,12 @@ df = pd.DataFrame({
     "z": np.random.rand(10)
 })
 print("\nDataFrame:\n", df)
+
+
+import cudf
+df = cudf.DataFrame({
+    "x": arr,
+    "y": arr * 2,
+    "z": np.random.rand(10)
+})
+print("\nDataFrame:\n", df)
