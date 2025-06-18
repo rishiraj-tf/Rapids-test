@@ -113,3 +113,4 @@ if __name__ == "__main__":
     display_time(pandas_concat, "Pandas concat relations")
     result = get_concat(relation_1, relation_2, method)
     print(f"Pandas final result length: {len(result)}")
+
