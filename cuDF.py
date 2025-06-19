@@ -46,7 +46,7 @@ def get_concat(relation_1, relation_2, method='cudf'):
 
 
 if __name__ == "__main__":
-    dataset = "../data/data_5533214.txt"
+    dataset = "roadNet-CA.txt"
     repeat = 100
 
     cudf_csv_read = timeit.timeit('get_read_csv(dataset)',
