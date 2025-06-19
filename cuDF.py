@@ -10,12 +10,11 @@ def display_time(time_took, message):
 
 def get_read_csv(filename, method='cudf'):
     column_names = ['column 1', 'column 2']
-    n = int(re.search('\d+|$', filename).group())
     if method == 'df':
         return pd.read_csv(filename, sep='\t', header=None,
-                           names=column_names, nrows=n)
+                           names=column_names)
     return cudf.read_csv(filename, sep='\t', header=None,
-                         names=column_names, nrows=n)
+                         names=column_names)
 
 
 def get_reverse(relation):
