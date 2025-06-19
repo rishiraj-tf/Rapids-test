@@ -8,7 +8,7 @@ on:
 env:
   TFY_HOST: https://internal.devtest.truefoundry.tech
   TFY_API_KEY: ${{ secrets.TFY_API_KEY }}
-  APPLICATION_FQN: tfy-usea1-devtest:tt-test:rapids-job-5
+  APPLICATION_FQN: tfy-gtl-b-us-central-1:chirag-gpu-dev:rapids-cudf-2
 
 jobs:
   deploy:
