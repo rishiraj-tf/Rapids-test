@@ -1,0 +1,35 @@
+name: rapids-test-final
+type: job
+image:
+  type: build
+  build_spec:
+    type: tfy-python-buildpack
+    command: python cuDF.py
+    cuda_version: 12.0-cudnn8
+    python_version: '3.11'
+    requirements_path: requirements.txt
+    build_context_path: .
+  # `build_source.branch_name` and `build_source.ref` will automatically be patched during deployment.
+  build_source:
+    ref: 4e23c6b64a68f2d15b2cddc69edcac287fb87669
+    type: git
+    repo_url: https://github.com/rishiraj-tf/Rapids-test
+    branch_name: main
+retries: 0
+trigger:
+  type: manual
+resources:
+  node:
+    type: node_selector
+    capacity_type: spot_fallback_on_demand
+  devices:
+    - name: L4
+      type: nvidia_gpu
+      count: 5
+  cpu_limit: 20
+  cpu_request: 18
+  memory_limit: 80000
+  memory_request: 68000
+  ephemeral_storage_limit: 100000
+  ephemeral_storage_request: 20000
+workspace_fqn: tfy-gtl-b-us-central-1:chirag-gpu-dev
