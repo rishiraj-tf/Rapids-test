@@ -58,7 +58,7 @@ def main():
     from cuml.ensemble import RandomForestClassifier as cuRF  # re-import after accel
 
     rf_cuml = cuRF(
-        n_estimators=100, max_depth=20, random_state=42, n_jobs=-1
+        n_estimators=100, max_depth=20, random_state=42
     )
     _, cuml_time = time_execution(rf_cuml.fit, X_train, y_train)
     print(f"Training time with cuML: {cuml_time:.2f} seconds")
